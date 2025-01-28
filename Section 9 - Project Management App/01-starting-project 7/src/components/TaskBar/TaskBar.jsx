@@ -1,4 +1,5 @@
 import projectsList from "../../content/projects";
+import "./TaskBar.css";
 
 export default function TaskBar() {
   return (

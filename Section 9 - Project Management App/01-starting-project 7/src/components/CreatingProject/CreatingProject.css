@@ -1,0 +1,64 @@
+/* Form container styling */
+form.creating-project {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 8rem;
+  margin-left: 4rem;
+
+}
+
+/* Button section style */
+div.form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+div.form-buttons button {
+  padding: 1rem;
+  border-radius: .5rem;
+  margin: .5rem;
+}
+
+button.cancel-button {
+  background-color: var(--color-accent-dark);
+  color: var(--color-light);
+}
+
+button.save-button {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+}
+
+/* Input section style */
+div.input-section {
+  align-self: center;
+  width: 100%;
+}
+
+div.input {
+  display: flex;
+  flex-direction: column;
+}
+
+div.input label{
+
+}
+
+div.input input {
+  background-color: var(--color-accent-dark);
+  color: var(--color-light);
+  border-radius: .25rem;
+  height: 2rem;
+  padding: .5rem;
+}
+
+div.input textarea {
+  background-color: var(--color-accent-dark);
+  color: var(--color-light);
+  border-radius: .25rem;
+  min-height: 4rem;
+  max-height: 20rem;
+  padding: .5rem;
+}

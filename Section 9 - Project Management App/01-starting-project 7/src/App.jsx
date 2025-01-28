@@ -19,7 +19,7 @@ function App() {
   let creatingProject = true;
 
   if (creatingProject) {
-    displayMainContent = <CreatingProject />;
+    displayMainContent = <CreatingProject creatingProject={creatingProject} />;
   } else {
     displayMainContent = isProjectListEmpty ? (
       <DefaultTaskScreen />
