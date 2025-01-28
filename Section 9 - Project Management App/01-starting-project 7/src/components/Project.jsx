@@ -1,7 +1,7 @@
-export default function Project() {
+export default function Project({ selectedProject }) {
   return (
     <main className="task-content">
-      <h2>Project Name</h2>
+      <h1>Project Name</h1>
     </main>
-  )
+  );
 }
