@@ -1,0 +1,29 @@
+/* CSS if there are no projects */
+main.no-task-content {
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+
+div.image-container {
+  display: flex;
+  justify-content: center;
+}
+
+main img {
+  max-width: 8rem;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+main button {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  margin: 3rem;
+  padding: 1rem;
+  border-radius: .5rem;
+}
+main button:hover {
+  box-shadow: .25rem .25rem .25rem var(--color-accent-light);
+  color: var(--color-accent-light);
+}

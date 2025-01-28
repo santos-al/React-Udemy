@@ -1,8 +1,8 @@
 import projectsList from "./content/projects";
-import Project from "./components/Project";
-import DefaultTaskScreen from "./components/defaultTaskScreen";
-import CreatingProject from "./components/CreatingProject";
-import TaskBar from "./components/TaskBar";
+import Project from "./components/MyProject/MyProject";
+import DefaultTaskScreen from "./components/DefaultTaskScreen/DefaultTaskScreen";
+import CreatingProject from "./components/CreatingProject/CreatingProject";
+import TaskBar from "./components/TaskBar/TaskBar";
 
 function App() {
   // The main section will either
@@ -16,7 +16,7 @@ function App() {
   const isProjectListEmpty = isEmpty(projectsList);
 
   let displayMainContent = <DefaultTaskScreen />;
-  let creatingProject = false;
+  let creatingProject = true;
 
   if (creatingProject) {
     displayMainContent = <CreatingProject />;

@@ -45,88 +45,8 @@ h2 {
 }
 
 
-/* Task Bar styling */
-aside.task-bar {
-  margin-top: 2.5rem;
-  background-color: var(--color-dark);
-  max-height: 100vh;
-  border-radius: 0rem 1rem 0rem 0rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-aside h2 {
-  margin-top: 1rem;
-  margin-bottom: 3rem;
-}
-
-aside button.add-project {
-  background-color: var(--color-accent-light);
-  color: var(--color-dark);
-  margin: 3rem;
-  padding: 1rem;
-  border-radius: .5rem;
-}
-
-aside button.add-project:hover {
-  color: var(--color-accent-dark);
-}
-
-div.projects-list {
-  display: flex;
-  flex-direction: column;
-}
-
-button.project-title-button {
-  margin: 1rem;
-}
-
-button.project-title-button:hover {
-  color: var(--color-accent-light);
-}
-
-
 /* Basic main section styles */
 main {
   background-color: var(--color-light);
   min-height: 100vh;
-}
-
-
-/* CSS for Projects */
-main.task-content {
-  
-}
-
-
-/* CSS if there are no projects */
-main.no-task-content {
-  display: grid;
-  place-content: center;
-  text-align: center;
-}
-
-div.image-container {
-  display: flex;
-  justify-content: center;
-}
-
-main img {
-  max-width: 8rem;
-  height: auto;
-  margin-bottom: 1rem;
-}
-
-main button {
-  background-color: var(--color-dark);
-  color: var(--color-light);
-  margin: 3rem;
-  padding: 1rem;
-  border-radius: .5rem;
-}
-main button:hover {
-  box-shadow: .25rem .25rem .25rem var(--color-accent-light);
-  color: var(--color-accent-light);
 }

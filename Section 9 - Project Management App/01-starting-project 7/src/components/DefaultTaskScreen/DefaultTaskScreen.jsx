@@ -1,4 +1,4 @@
-import logo from "../assets/no-projects.png"
+import logo from "../../assets/no-projects.png"
 
 export default function DefaultTaskScreen() {
   return (
