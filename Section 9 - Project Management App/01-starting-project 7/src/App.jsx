@@ -1,37 +1,35 @@
 import projectsList from "./content/projects";
-import Project from "./components/MyProject/MyProject";
+import MyProject from "./components/MyProject/MyProject";
 import DefaultTaskScreen from "./components/DefaultTaskScreen/DefaultTaskScreen";
 import CreatingProject from "./components/CreatingProject/CreatingProject";
 import TaskBar from "./components/TaskBar/TaskBar";
 
+import { useState } from "react";
+
 function App() {
-  // The main section will either
-  //  1. Display "Create a new project, if 'projectsList' is empty"
-  //  2. Or display the selected project and its contents
+  const [displayMainContent, setDisplayMainContent] = useState(<DefaultTaskScreen handleAddProject={handleAddProject}/>);
 
   function isEmpty(obj) {
     return Object.keys(obj).length === 0;
   }
-
   const isProjectListEmpty = isEmpty(projectsList);
 
-  let displayMainContent = <DefaultTaskScreen />;
-  let creatingProject = true;
+  function handleAddProject() {
+    setDisplayMainContent(<CreatingProject handleCancel={handleCancelProject} />);
+  }
 
-  if (creatingProject) {
-    displayMainContent = <CreatingProject creatingProject={creatingProject} />;
-  } else {
-    displayMainContent = isProjectListEmpty ? (
-      <DefaultTaskScreen />
-    ) : (
-      <Project />
-    );
+  function handleSelectedProject(projectTitle) {
+    setDisplayMainContent(<MyProject selectedProject={projectTitle} />)
+  }
+
+  function handleCancelProject() {
+    setDisplayMainContent(<DefaultTaskScreen handleAddProject={handleAddProject} />);
   }
 
   return (
     <>
       <section className="grid grid-cols-[30%,70%]">
-        <TaskBar />
+        <TaskBar handleSelectedProject={handleSelectedProject} handleAddProject={handleAddProject} />
         {displayMainContent}
       </section>
     </>

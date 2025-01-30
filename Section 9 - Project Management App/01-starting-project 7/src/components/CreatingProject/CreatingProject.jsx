@@ -1,13 +1,14 @@
 import "./CreatingProject.css";
 import { useState } from "react";
 
-export default function CreatingProject({ creatingProject }) {
+export default function CreatingProject({ handleCancel }) {
 
   const [formData, setFormData] = useState({
     title: "",
     description: "",
     dueDate: ""
   });
+
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -19,7 +20,6 @@ export default function CreatingProject({ creatingProject }) {
 
     // set the creatingProject to false and link it to the variable from the app
     // Probbaly can useRef to connect them and then useState to cause the page to refrsh
-    creatingProject = false;
 
     // Add the data to content
     console.log(formData);
@@ -30,7 +30,7 @@ export default function CreatingProject({ creatingProject }) {
   return (
     <form onSubmit={handleSubmit} className="creating-project">
       <div className="form-buttons">
-        <button className="cancel-button">Cancel</button>
+        <button className="cancel-button" onClick={handleCancel}>Cancel</button>
         <button className="save-button" type="submit">Save</button>
       </div>
       <div className="input-section">

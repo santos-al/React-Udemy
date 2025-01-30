@@ -1,3 +1,5 @@
+// Make this a json file
+
 const projects = {
   dummyTask: {
     title: "Dummy Projects",

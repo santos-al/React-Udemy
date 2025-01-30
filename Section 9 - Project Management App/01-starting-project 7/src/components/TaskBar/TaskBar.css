@@ -34,8 +34,14 @@ div.projects-list {
 
 button.project-title-button {
   margin: 1rem;
+  border-color: transparent;
+  border-width: 0px 0px .1rem 0px;
 }
 
 button.project-title-button:hover {
   color: var(--color-accent-light);
+}
+
+button.project-title-button:focus {
+  border-color: var(--color-accent-light);
 }
