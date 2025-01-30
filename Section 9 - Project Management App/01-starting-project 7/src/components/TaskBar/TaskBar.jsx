@@ -1,7 +1,9 @@
-import projectsList from "../../content/projects";
 import "./TaskBar.css";
 
-export default function TaskBar({ handleAddProject, handleSelectedProject }) {
+export default function TaskBar({ handleAddProject, handleSelectedProject, projectsList }) {
+
+  // Add an if check for projects list
+
   return (
     <aside className="task-bar">
       <h2>Your Projects</h2>

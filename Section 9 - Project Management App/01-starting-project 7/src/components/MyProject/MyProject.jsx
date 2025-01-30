@@ -8,9 +8,15 @@ export default function MyProject({ selectedProject }) {
         <h1>{selectedProject.title}</h1>
         <p>{selectedProject.description}</p>
         <p>{selectedProject.dueDate}</p>
+        <button>Delete</button>
       </div>
       <div>
-        <button>Delete</button>
+        <h2>Tasks</h2>
+        <div>
+          <input></input>
+          <button>Add Task</button>
+        </div>
+        <p>"List of all tasks"</p>
       </div>
     </main>
   );
