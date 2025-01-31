@@ -1,16 +1,13 @@
 import "./TaskBar.css";
 
 export default function TaskBar({ handleAddProject, handleSelectedProject, projectsList }) {
-
-  // Add an if check for projects list
-
   return (
     <aside className="task-bar">
       <h2>Your Projects</h2>
       <div className="projects-list">
-        {Object.keys(projectsList).map((key) => (
-          <button className="project-title-button" key={key} onClick={() => handleSelectedProject(projectsList[key])}>
-            {projectsList[key].title}
+        {projectsList.map((project, index) => (
+          <button className="project-title-button" key={index} onClick={() => handleSelectedProject(project)}>
+            {project.title}
           </button>
         ))}
       </div>

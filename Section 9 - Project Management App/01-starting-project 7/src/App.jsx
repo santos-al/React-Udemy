@@ -3,22 +3,11 @@ import DefaultTaskScreen from "./components/DefaultTaskScreen/DefaultTaskScreen"
 import CreatingProject from "./components/CreatingProject/CreatingProject";
 import TaskBar from "./components/TaskBar/TaskBar";
 
-import { useState } from "react";
-
-// change data into local storage
+import { useEffect, useState } from "react";
 
 function App() {
   const [displayMainContent, setDisplayMainContent] = useState(<DefaultTaskScreen handleAddProject={handleAddProject}/>);
-  const [projects, setProjects] = useState(() => {
-    // Load projects from Local Storage or use the default projectsList
-    const savedProjects = localStorage.getItem("projects");
-    return savedProjects ? JSON.parse(savedProjects) : "";
-  });
-
-  function isEmpty(obj) {
-    return Object.keys(obj).length === 0;
-  }
-  // const isProjectListEmpty = isEmpty(projectsList);
+  const [projects, setProjects] = useState([])
 
   function handleAddProject() {
     setDisplayMainContent(<CreatingProject handleCancel={handleCancelProject} addProject={addProject} />);
@@ -32,16 +21,24 @@ function App() {
     setDisplayMainContent(<DefaultTaskScreen handleAddProject={handleAddProject} />);
   }
 
+  // Load projects from local storage
+  useEffect(() => {
+    const savedProjects = localStorage.getItem("projects");
+    if (savedProjects) {
+      setProjects(JSON.parse(savedProjects)); // Parse and set the projects
+    } else {
+      localStorage.setItem("projects", JSON.stringify([])); // Initialize with an empty array
+    }
+  }, []);
+
   function addProject(newProject) {
-    const newKey = `project${Object.keys(projects).length + 1}`;
-    const updatedProjects = {
-      ...projects,
-      [newKey]: newProject,
-    };
-    setProjects(updatedProjects);
+    setProjects((prevProjects) => {
+      const updatedProjects = [...prevProjects, newProject]; // Append the new project to the previous state
+      localStorage.setItem("projects", JSON.stringify(updatedProjects)); // Save the updated projects list to localStorage
+      return updatedProjects; // Return the updated state
+    });
+    console.log("Added new project", newProject);
   }
-
-
 
   return (
     <>

@@ -6,7 +6,8 @@ export default function CreatingProject({ handleCancel, addProject }) {
   const [formData, setFormData] = useState({
     title: "",
     description: "",
-    dueDate: ""
+    dueDate: "",
+    tasks: []
   });
 
 
@@ -23,7 +24,7 @@ export default function CreatingProject({ handleCancel, addProject }) {
     setFormData({
       title: "",
       description: "",
-      dueDate: ""
+      dueDate: "",
     });
   })
 
