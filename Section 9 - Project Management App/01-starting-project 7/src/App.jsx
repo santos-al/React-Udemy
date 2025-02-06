@@ -37,7 +37,6 @@ function App() {
       localStorage.setItem("projects", JSON.stringify(updatedProjects)); // Save the updated projects list to localStorage
       return updatedProjects; // Return the updated state
     });
-    console.log("Added new project", newProject);
   }
 
   return (
