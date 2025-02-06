@@ -14,7 +14,7 @@ function App() {
   }
 
   function handleSelectedProject(projectTitle) {
-    setDisplayMainContent(<MyProject selectedProject={projectTitle} />)
+    setDisplayMainContent(<MyProject selectedProject={projectTitle} setProjects={setProjects} />)
   }
 
   function handleCancelProject() {

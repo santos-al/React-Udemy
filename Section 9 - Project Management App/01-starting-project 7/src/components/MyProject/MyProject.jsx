@@ -1,21 +1,21 @@
 import "./MyProject.css";
 
 
-export default function MyProject({ selectedProject }) {
+export default function MyProject({ selectedProject, setProjects }) {
 
   function handleDelete() {
-    
-    let projects = localStorage.getItem("projects");
-    projects = JSON.parse(projects);
-
-    for (let i = 0; i < projects.length; i++ ) {
-      if (projects[i].title === selectedProject.title) {
-        projects.splice(i, 1);
-        break;
+    setProjects(() => {
+      let projects = localStorage.getItem("projects");
+      projects = JSON.parse(projects);
+      for (let i = 0; i < projects.length; i++ ) {
+        if (projects[i].title === selectedProject.title) {
+          projects.splice(i, 1);
+          break;
+        }
       }
-    }
-    console.log(JSON.stringify(projects));
-    localStorage.setItem("projects", JSON.stringify(projects));
+      localStorage.setItem("projects", JSON.stringify(projects))
+      return projects
+    });
   }
 
   return (
@@ -39,6 +39,5 @@ export default function MyProject({ selectedProject }) {
 }
 
 
-// 1. Add project delete button
-// 2. Add functionality to add new tasks
-// 3. Add style for projects
+// 1. Add functionality to add new tasks
+// 2. Add style for projects
