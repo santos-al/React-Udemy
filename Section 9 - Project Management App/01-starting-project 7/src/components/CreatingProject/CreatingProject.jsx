@@ -10,7 +10,6 @@ export default function CreatingProject({ handleCancel, addProject }) {
     tasks: []
   });
 
-
   function handleChange(event) {
     const { name, value } = event.target;
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value}))
