@@ -1,4 +1,70 @@
 /* CSS for Projects */
 main.task-content {
-  
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+div.project-overview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+div.project-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 2.5rem;
+  padding-left: 1rem;
+}
+
+div.project-description {
+  width: 100%;
+  border-bottom-width: .25rem;
+  border-color: var(--color-dark);
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+
+div.task-list {
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: var(--color-accent-light);
+}
+
+div.single-task {
+  display: flex;
+  justify-content: space-between;
+}
+
+input.task-input {
+  border-radius: .25rem;
+  padding: .5rem;
+  background-color: var(--color-accent-light);
+  color: var(--color-dark);
+}
+
+ul.tasks {
+
+  li {
+    color: var(--color-dark);
+    list-style-type: circle;
+    margin-left: .5rem;
+  }
+
+  button {
+    margin: 0rem;
+    padding: .25rem;
+    background-color: transparent;
+    color: var(--color-dark);
+  }
+
+  button:hover {
+    color: var(--color-dark);
+    text-decoration: underline;
+    
+  }
 }

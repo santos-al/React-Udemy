@@ -58,16 +58,23 @@ export default function MyProject({ selectedProject, setProjects }) {
 
   return (
     <main className="task-content">
-      <div>
-        <h1>{selectedProject.title}</h1>
-        <p>{selectedProject.description}</p>
-        <p>{selectedProject.dueDate}</p>
-        <button onClick={handleDelete}>Delete</button>
+      <div className="project-overview">
+        <div className="project-title">
+          <h1>{selectedProject.title}</h1>
+          <button onClick={handleDelete}>Delete</button>
+        </div>
+        <div className="project-description">
+          <h2>Description:</h2>
+          <p>{selectedProject.description}</p>
+          <h2>Due Date:</h2>
+          <p>{selectedProject.dueDate}</p>
+        </div>
       </div>
       <div>
         <h2>Tasks</h2>
         <div>
           <input 
+          className="task-input"
           required
           value={task}
           onChange={handleChange}
@@ -75,11 +82,13 @@ export default function MyProject({ selectedProject, setProjects }) {
           <button onClick={handleAddTask}>Add Task</button>
         </div>
         {/* Use map function to iterate through list of task */}
-        <div className="tasks-list">
-          <h2>"List of all tasks"</h2> 
+        <div className="task-list">
           <ul className="tasks">
             {selectedProject.tasks.map((task) => (
-              <li className={task} key={task}>{task}</li>
+              <div className="single-task" key={task}>
+                <li>{task}</li>
+                <button className="delete-task">X</button>
+              </div>
             ))}
           </ul>
         </div>
@@ -87,7 +96,3 @@ export default function MyProject({ selectedProject, setProjects }) {
     </main>
   );
 }
-
-
-// 1. Add functionality to add new tasks
-// 2. Add style for projects
