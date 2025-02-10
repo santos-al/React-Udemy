@@ -87,7 +87,7 @@ export default function MyProject({ selectedProject, setProjects }) {
             {selectedProject.tasks.map((task) => (
               <div className="single-task" key={task}>
                 <li>{task}</li>
-                <button className="delete-task">X</button>
+                <button className="delete-task">Clear</button>
               </div>
             ))}
           </ul>
