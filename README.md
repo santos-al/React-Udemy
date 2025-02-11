@@ -42,7 +42,7 @@ Within each project, users can add tasks as needed and mark them as completed wh
 
 - **Language**: JavaScript, HTML, CSS
 - **Database**: Local Storage
-- **Other Libraries/Tools**: React, Tailwind
+- **Other Libraries/Tools**: React, Tailwind, Vite
 
 ## Installation
 
